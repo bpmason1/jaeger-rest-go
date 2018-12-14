@@ -16,7 +16,7 @@ import (
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
-func initJaeger(serviceName string) (opentracing.Tracer, io.Closer) {
+func InitJaeger(serviceName string) (opentracing.Tracer, io.Closer) {
     agentHost := gaia.GetEnvWithDefault("JAEGER_AGENT_HOST", "127.0.0.1")
     agentPort := gaia.GetPortWithDefault("JAEGER_AGENT_PORT", 6831)
     agentAddr := fmt.Sprintf("%s:%d", agentHost, agentPort)
