@@ -16,6 +16,13 @@ import (
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
+func InitGlobalJaegerTracer(serviceName string) (io.Closer) {
+    _, closer := InitJaeger(serviceName)
+    return closer
+}
+
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 func InitJaeger(serviceName string) (opentracing.Tracer, io.Closer) {
     agentHost := gaia.GetEnvWithDefault("JAEGER_AGENT_HOST", "127.0.0.1")
     agentPort := gaia.GetPortWithDefault("JAEGER_AGENT_PORT", 6831)
