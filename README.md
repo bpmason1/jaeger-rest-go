@@ -1,2 +1,2 @@
 # jaeger-rest-go
-A golang library implement a very simple jaeger tracing setup for REST services.
+A golang library implementing a very simple jaeger tracing setup for REST services.
